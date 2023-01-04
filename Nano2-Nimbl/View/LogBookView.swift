@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct LogBookView: View {
-    @EnvironmentObject var logBookVM: LogBookViewModel
+    @StateObject var logBookVM: LogBookViewModel = LogBookViewModel()
     
     var body: some View {
         Form {
             Section {
-                DatePicker("tes123", selection: $logBookVM.selectedDate, displayedComponents: .date)
+                DatePicker("", selection: $logBookVM.selectedDate, displayedComponents: .date)
                     .onChange(of: logBookVM.selectedDate, perform: { _ in
                         print(logBookVM.selectedDate)
                         logBookVM.setLogBookForSelectedDate()
@@ -22,10 +22,10 @@ struct LogBookView: View {
                     .labelsHidden()
             }
             Section {
-                TextEditor(text: $logBookVM.selectedLogBook.description)
+                TextEditor(text: $logBookVM.selectedLogBook.desc)
                     .frame(height: 200)
-                    .onChange(of: logBookVM.selectedLogBook.description) { _ in
-                        logBookVM.update()
+                    .onChange(of: logBookVM.selectedLogBook.desc) { _ in
+                        logBookVM.updateLogBook()
                         print("LogBook Updated")
                     }
             } header: {
