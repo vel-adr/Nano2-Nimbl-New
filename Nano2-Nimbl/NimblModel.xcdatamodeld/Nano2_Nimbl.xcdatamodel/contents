@@ -5,4 +5,10 @@
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
+    <entity name="ResourceEntity" representedClassName="ResourceEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="updateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
 </model>

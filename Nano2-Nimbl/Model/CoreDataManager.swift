@@ -31,4 +31,8 @@ struct CoreDataManager {
             print("Error saving. \(error.localizedDescription)")
         }
     }
+    
+    public func delete(object: NSManagedObject) {
+        container.viewContext.delete(object)
+    }
 }

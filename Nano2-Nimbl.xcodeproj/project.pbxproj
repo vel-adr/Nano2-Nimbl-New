@@ -17,6 +17,11 @@
 		E97EF4C629657C0D00682923 /* LogBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4C529657C0D00682923 /* LogBookViewModel.swift */; };
 		E97EF4C929657D0E00682923 /* LogBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4C829657D0E00682923 /* LogBook.swift */; };
 		E97EF4CB2965804400682923 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4CA2965804400682923 /* CoreDataManager.swift */; };
+		E97EF4CE2965875400682923 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4CD2965875400682923 /* ResourceView.swift */; };
+		E97EF4D02965877800682923 /* ResourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4CF2965877800682923 /* ResourceViewModel.swift */; };
+		E97EF4D22965879800682923 /* ResourceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4D12965879800682923 /* ResourceDetailView.swift */; };
+		E97EF4D5296587D300682923 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4D4296587D300682923 /* ListItemView.swift */; };
+		E97EF4D72965880700682923 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4D62965880700682923 /* Resource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		E97EF4C529657C0D00682923 /* LogBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookViewModel.swift; sourceTree = "<group>"; };
 		E97EF4C829657D0E00682923 /* LogBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBook.swift; sourceTree = "<group>"; };
 		E97EF4CA2965804400682923 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E97EF4CD2965875400682923 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
+		E97EF4CF2965877800682923 /* ResourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceViewModel.swift; sourceTree = "<group>"; };
+		E97EF4D12965879800682923 /* ResourceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailView.swift; sourceTree = "<group>"; };
+		E97EF4D4296587D300682923 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
+		E97EF4D62965880700682923 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,8 @@
 		E97EF4C129657B7C00682923 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E97EF4D3296587C600682923 /* Component */,
+				E97EF4CC2965874200682923 /* Resource */,
 				E97EF4C229657B9E00682923 /* LogBookView.swift */,
 			);
 			path = View;
@@ -96,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E97EF4C529657C0D00682923 /* LogBookViewModel.swift */,
+				E97EF4CF2965877800682923 /* ResourceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -105,8 +118,26 @@
 			children = (
 				E97EF4C829657D0E00682923 /* LogBook.swift */,
 				E97EF4CA2965804400682923 /* CoreDataManager.swift */,
+				E97EF4D62965880700682923 /* Resource.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E97EF4CC2965874200682923 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E97EF4CD2965875400682923 /* ResourceView.swift */,
+				E97EF4D12965879800682923 /* ResourceDetailView.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E97EF4D3296587C600682923 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				E97EF4D4296587D300682923 /* ListItemView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,9 +210,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E97EF4D72965880700682923 /* Resource.swift in Sources */,
 				E97EF4B829657B4000682923 /* Persistence.swift in Sources */,
+				E97EF4D22965879800682923 /* ResourceDetailView.swift in Sources */,
 				E97EF4C929657D0E00682923 /* LogBook.swift in Sources */,
+				E97EF4D5296587D300682923 /* ListItemView.swift in Sources */,
+				E97EF4CE2965875400682923 /* ResourceView.swift in Sources */,
 				E97EF4B129657B3F00682923 /* ContentView.swift in Sources */,
+				E97EF4D02965877800682923 /* ResourceViewModel.swift in Sources */,
 				E97EF4AF29657B3F00682923 /* Nano2_NimblApp.swift in Sources */,
 				E97EF4BB29657B4000682923 /* NimblModel.xcdatamodeld in Sources */,
 				E97EF4C629657C0D00682923 /* LogBookViewModel.swift in Sources */,

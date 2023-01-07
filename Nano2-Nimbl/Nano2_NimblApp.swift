@@ -13,7 +13,7 @@ struct Nano2_NimblApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LogBookView()
+            ResourceView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
