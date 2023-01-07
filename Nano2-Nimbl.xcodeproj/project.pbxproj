@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E97993CF2969BB260016004F /* ReflectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97993CE2969BB260016004F /* ReflectionView.swift */; };
+		E97993D12969BB370016004F /* ReflectionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97993D02969BB370016004F /* ReflectionDetailView.swift */; };
+		E97993D32969BB9D0016004F /* ReflectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97993D22969BB9D0016004F /* ReflectionViewModel.swift */; };
+		E97993D52969BDB50016004F /* Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97993D42969BDB50016004F /* Reflection.swift */; };
 		E97EF4AF29657B3F00682923 /* Nano2_NimblApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4AE29657B3F00682923 /* Nano2_NimblApp.swift */; };
 		E97EF4B129657B3F00682923 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4B029657B3F00682923 /* ContentView.swift */; };
 		E97EF4B329657B4000682923 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E97EF4B229657B4000682923 /* Assets.xcassets */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E97993CE2969BB260016004F /* ReflectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionView.swift; sourceTree = "<group>"; };
+		E97993D02969BB370016004F /* ReflectionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionDetailView.swift; sourceTree = "<group>"; };
+		E97993D22969BB9D0016004F /* ReflectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionViewModel.swift; sourceTree = "<group>"; };
+		E97993D42969BDB50016004F /* Reflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflection.swift; sourceTree = "<group>"; };
 		E97EF4AB29657B3F00682923 /* Nano2-Nimbl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nano2-Nimbl.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97EF4AE29657B3F00682923 /* Nano2_NimblApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano2_NimblApp.swift; sourceTree = "<group>"; };
 		E97EF4B029657B3F00682923 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E97993CD2969BAA10016004F /* Reflection */ = {
+			isa = PBXGroup;
+			children = (
+				E97993CE2969BB260016004F /* ReflectionView.swift */,
+				E97993D02969BB370016004F /* ReflectionDetailView.swift */,
+			);
+			path = Reflection;
+			sourceTree = "<group>";
+		};
 		E97EF4A229657B3F00682923 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +114,7 @@
 		E97EF4C129657B7C00682923 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E97993CD2969BAA10016004F /* Reflection */,
 				E97EF4D3296587C600682923 /* Component */,
 				E97EF4CC2965874200682923 /* Resource */,
 				E97EF4C229657B9E00682923 /* LogBookView.swift */,
@@ -109,6 +127,7 @@
 			children = (
 				E97EF4C529657C0D00682923 /* LogBookViewModel.swift */,
 				E97EF4CF2965877800682923 /* ResourceViewModel.swift */,
+				E97993D22969BB9D0016004F /* ReflectionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -119,6 +138,7 @@
 				E97EF4C829657D0E00682923 /* LogBook.swift */,
 				E97EF4CA2965804400682923 /* CoreDataManager.swift */,
 				E97EF4D62965880700682923 /* Resource.swift */,
+				E97993D42969BDB50016004F /* Reflection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,14 +231,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E97EF4D72965880700682923 /* Resource.swift in Sources */,
+				E97993CF2969BB260016004F /* ReflectionView.swift in Sources */,
 				E97EF4B829657B4000682923 /* Persistence.swift in Sources */,
 				E97EF4D22965879800682923 /* ResourceDetailView.swift in Sources */,
+				E97993D12969BB370016004F /* ReflectionDetailView.swift in Sources */,
 				E97EF4C929657D0E00682923 /* LogBook.swift in Sources */,
 				E97EF4D5296587D300682923 /* ListItemView.swift in Sources */,
 				E97EF4CE2965875400682923 /* ResourceView.swift in Sources */,
+				E97993D52969BDB50016004F /* Reflection.swift in Sources */,
 				E97EF4B129657B3F00682923 /* ContentView.swift in Sources */,
 				E97EF4D02965877800682923 /* ResourceViewModel.swift in Sources */,
 				E97EF4AF29657B3F00682923 /* Nano2_NimblApp.swift in Sources */,
+				E97993D32969BB9D0016004F /* ReflectionViewModel.swift in Sources */,
 				E97EF4BB29657B4000682923 /* NimblModel.xcdatamodeld in Sources */,
 				E97EF4C629657C0D00682923 /* LogBookViewModel.swift in Sources */,
 				E97EF4CB2965804400682923 /* CoreDataManager.swift in Sources */,
