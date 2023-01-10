@@ -15,10 +15,8 @@
 		E97993D72969C0C40016004F /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97993D62969C0C40016004F /* DashboardView.swift */; };
 		E97993D92969C1140016004F /* DailyStatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97993D82969C1140016004F /* DailyStatusBarView.swift */; };
 		E97EF4AF29657B3F00682923 /* Nano2_NimblApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4AE29657B3F00682923 /* Nano2_NimblApp.swift */; };
-		E97EF4B129657B3F00682923 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4B029657B3F00682923 /* ContentView.swift */; };
 		E97EF4B329657B4000682923 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E97EF4B229657B4000682923 /* Assets.xcassets */; };
 		E97EF4B629657B4000682923 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E97EF4B529657B4000682923 /* Preview Assets.xcassets */; };
-		E97EF4B829657B4000682923 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4B729657B4000682923 /* Persistence.swift */; };
 		E97EF4BB29657B4000682923 /* NimblModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4B929657B4000682923 /* NimblModel.xcdatamodeld */; };
 		E97EF4C329657B9E00682923 /* LogBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4C229657B9E00682923 /* LogBookView.swift */; };
 		E97EF4C629657C0D00682923 /* LogBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EF4C529657C0D00682923 /* LogBookViewModel.swift */; };
@@ -41,10 +39,8 @@
 		E97993D82969C1140016004F /* DailyStatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStatusBarView.swift; sourceTree = "<group>"; };
 		E97EF4AB29657B3F00682923 /* Nano2-Nimbl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nano2-Nimbl.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97EF4AE29657B3F00682923 /* Nano2_NimblApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano2_NimblApp.swift; sourceTree = "<group>"; };
-		E97EF4B029657B3F00682923 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E97EF4B229657B4000682923 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E97EF4B529657B4000682923 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E97EF4B729657B4000682923 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E97EF4BA29657B4000682923 /* Nano2_Nimbl.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nano2_Nimbl.xcdatamodel; sourceTree = "<group>"; };
 		E97EF4C229657B9E00682923 /* LogBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookView.swift; sourceTree = "<group>"; };
 		E97EF4C529657C0D00682923 /* LogBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogBookViewModel.swift; sourceTree = "<group>"; };
@@ -100,9 +96,7 @@
 				E97EF4C429657BFF00682923 /* ViewModel */,
 				E97EF4C129657B7C00682923 /* View */,
 				E97EF4AE29657B3F00682923 /* Nano2_NimblApp.swift */,
-				E97EF4B029657B3F00682923 /* ContentView.swift */,
 				E97EF4B229657B4000682923 /* Assets.xcassets */,
-				E97EF4B729657B4000682923 /* Persistence.swift */,
 				E97EF4B929657B4000682923 /* NimblModel.xcdatamodeld */,
 				E97EF4B429657B4000682923 /* Preview Content */,
 			);
@@ -241,14 +235,12 @@
 			files = (
 				E97EF4D72965880700682923 /* Resource.swift in Sources */,
 				E97993CF2969BB260016004F /* ReflectionView.swift in Sources */,
-				E97EF4B829657B4000682923 /* Persistence.swift in Sources */,
 				E97EF4D22965879800682923 /* ResourceDetailView.swift in Sources */,
 				E97993D12969BB370016004F /* ReflectionDetailView.swift in Sources */,
 				E97EF4C929657D0E00682923 /* LogBook.swift in Sources */,
 				E97EF4D5296587D300682923 /* ListItemView.swift in Sources */,
 				E97EF4CE2965875400682923 /* ResourceView.swift in Sources */,
 				E97993D52969BDB50016004F /* Reflection.swift in Sources */,
-				E97EF4B129657B3F00682923 /* ContentView.swift in Sources */,
 				E97993D92969C1140016004F /* DailyStatusBarView.swift in Sources */,
 				E97EF4D02965877800682923 /* ResourceViewModel.swift in Sources */,
 				E97EF4AF29657B3F00682923 /* Nano2_NimblApp.swift in Sources */,
