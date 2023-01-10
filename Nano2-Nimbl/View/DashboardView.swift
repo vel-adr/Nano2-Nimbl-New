@@ -108,6 +108,8 @@ struct DashboardView: View {
             .navigationBarHidden(true)
         }
         .onAppear {
+            logBookVM.fetchLogBook()
+            logBookVM.setTodayLogBook()
             resourceVM.fetchResource()
             reflectionVM.fetchReflection()
         }
