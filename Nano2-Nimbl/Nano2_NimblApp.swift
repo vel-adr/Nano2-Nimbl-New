@@ -13,7 +13,7 @@ struct Nano2_NimblApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ReflectionView()
+            MainView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

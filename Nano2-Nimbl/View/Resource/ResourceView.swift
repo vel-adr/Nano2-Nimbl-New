@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ResourceView: View {
-    @StateObject var resourceVM: ResourceViewModel = ResourceViewModel()
+    @EnvironmentObject var resourceVM: ResourceViewModel
     
     var body: some View {
         NavigationView {

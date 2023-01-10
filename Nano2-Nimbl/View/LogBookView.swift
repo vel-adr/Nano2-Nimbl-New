@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LogBookView: View {
-    @StateObject var logBookVM: LogBookViewModel = LogBookViewModel()
+    @EnvironmentObject var logBookVM: LogBookViewModel
     
     var body: some View {
         Form {

@@ -69,4 +69,20 @@ class ReflectionViewModel: ObservableObject {
     public func setSelectedReflection(as reflection: Reflection) {
         selectedReflection = reflection
     }
+    
+    public func getTodayReflectionCount() -> Int {
+        let arr = reflections.filter { r in
+            Calendar.current.isDateInToday(r.updateTime ?? Date())
+        }
+        
+        return arr.count
+    }
+    
+    public func getRecentReflections() -> [Reflection] {
+        let entityArr = reflections.prefix(3)
+        let reflectionArr = entityArr.map { el in
+            Reflection(id: el.id ?? UUID(), title: el.title ?? "", desc: el.desc ?? "", updateTime: el.updateTime ?? Date())
+        }
+        return reflectionArr
+    }
 }

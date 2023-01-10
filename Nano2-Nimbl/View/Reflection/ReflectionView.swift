@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ReflectionView: View {
-    @StateObject var reflectVM: ReflectionViewModel = ReflectionViewModel()
+    @EnvironmentObject var reflectVM: ReflectionViewModel
     
     var body: some View {
         NavigationView {

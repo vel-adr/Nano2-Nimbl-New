@@ -14,10 +14,12 @@ class LogBookViewModel: ObservableObject {
     @Published var logBooks: [LogBookEntity] = []
     @Published var selectedLogBook: LogBook = LogBook(date: Date(), desc: "")
     @Published var selectedDate: Date = Date()
+    @Published var todayLogBook: LogBook = LogBook(date: Date(), desc: "")
     
     init() {
         fetchLogBook()
         self.selectedLogBook = getLogBookForSelectedDate(date: self.selectedDate)
+        setTodayLogBook()
     }
     
     public func fetchLogBook() {
@@ -70,5 +72,11 @@ class LogBookViewModel: ObservableObject {
     
     public func setLogBookForSelectedDate() {
         selectedLogBook = getLogBookForSelectedDate(date: selectedDate)
+    }
+    
+    public func setTodayLogBook() {
+        guard let logbook = logBooks.first(where: { Calendar.current.isDate($0.date ?? Date(), inSameDayAs: Date()) }) else { return }
+        
+        todayLogBook = LogBook(id: logbook.id ?? UUID(), date: logbook.date ?? Date(), desc: logbook.desc ?? "")
     }
 }

@@ -69,4 +69,20 @@ class ResourceViewModel: ObservableObject {
     public func setSelectedResource(as resource: Resource) {
         selectedResource = resource
     }
+    
+    public func getTodayResourceCount() -> Int {
+        let arr = resources.filter { r in
+            Calendar.current.isDateInToday(r.updateTime ?? Date())
+        }
+        
+        return arr.count
+    }
+    
+    public func getRecentResources() -> [Resource] {
+        let entityArr = resources.prefix(3)
+        let resourceArr = entityArr.map { el in
+            Resource(id: el.id ?? UUID(), title: el.title ?? "", desc: el.desc ?? "", updateTime: el.updateTime ?? Date())
+        }
+        return resourceArr
+    }
 }

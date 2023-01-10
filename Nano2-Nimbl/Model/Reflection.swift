@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Reflection {
+struct Reflection: Identifiable {
     var id: UUID = UUID()
     var title: String
     var desc: String
