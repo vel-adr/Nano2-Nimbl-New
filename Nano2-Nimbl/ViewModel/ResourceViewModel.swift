@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import Combine
 
 class ResourceViewModel: ObservableObject {
     var context = CoreDataManager.shared.container.viewContext
@@ -14,8 +15,32 @@ class ResourceViewModel: ObservableObject {
     @Published var resources: [ResourceEntity] = []
     @Published var selectedResource: Resource = Resource(title: "", desc: "", updateTime: Date())
     
+    @Published var debouncedTitle = ""
+    @Published var debouncedDesc = ""
+    private var cancellables = Set<AnyCancellable>()
+    
     init() {
         fetchResource()
+        setupDebounce()
+    }
+    
+    private func setupDebounce() {
+        debouncedDesc = selectedResource.desc
+        debouncedTitle = selectedResource.title
+        
+        let descPublisher = $selectedResource.map { ($0.desc) }
+        descPublisher.debounce(for: .seconds(1), scheduler: RunLoop.main)
+            .sink(receiveValue: { [weak self] str in
+                self?.debouncedDesc = str
+            })
+            .store(in: &cancellables)
+        
+        let titlePublisher = $selectedResource.map { ($0.title) }
+        titlePublisher.debounce(for: .seconds(1), scheduler: RunLoop.main)
+            .sink(receiveValue: { [weak self] str in
+                self?.debouncedTitle = str
+            })
+            .store(in: &cancellables)
     }
     
     public func fetchResource() {

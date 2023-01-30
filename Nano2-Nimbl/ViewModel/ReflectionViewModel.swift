@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import Combine
 
 class ReflectionViewModel: ObservableObject {
     var context = CoreDataManager.shared.container.viewContext
@@ -14,8 +15,32 @@ class ReflectionViewModel: ObservableObject {
     @Published var reflections: [ReflectionEntity] = []
     @Published var selectedReflection: Reflection = Reflection(title: "", desc: "", updateTime: Date())
     
+    @Published var debouncedTitle = ""
+    @Published var debouncedDesc = ""
+    private var cancellables = Set<AnyCancellable>()
+    
     init() {
         fetchReflection()
+        setupDebounce()
+    }
+    
+    private func setupDebounce() {
+        debouncedDesc = selectedReflection.desc
+        debouncedTitle = selectedReflection.title
+        
+        let descPublisher = $selectedReflection.map { ($0.desc) }
+        descPublisher.debounce(for: .seconds(1), scheduler: RunLoop.main)
+            .sink(receiveValue: { [weak self] str in
+                self?.debouncedDesc = str
+            })
+            .store(in: &cancellables)
+        
+        let titlePublisher = $selectedReflection.map { ($0.title) }
+        titlePublisher.debounce(for: .seconds(1), scheduler: RunLoop.main)
+            .sink(receiveValue: { [weak self] str in
+                self?.debouncedTitle = str
+            })
+            .store(in: &cancellables)
     }
     
     public func fetchReflection() {

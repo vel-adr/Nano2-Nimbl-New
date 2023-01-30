@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import Combine
 
 class LogBookViewModel: ObservableObject {
     var context = CoreDataManager.shared.container.viewContext
@@ -16,10 +17,25 @@ class LogBookViewModel: ObservableObject {
     @Published var selectedDate: Date = Date()
     @Published var todayLogBook: LogBook = LogBook(date: Date(), desc: "")
     
+    @Published var debouncedDesc: String = ""
+    private var cancellables = Set<AnyCancellable>()
+    
     init() {
         fetchLogBook()
         self.selectedLogBook = getLogBookForSelectedDate(date: self.selectedDate)
         setTodayLogBook()
+        setupDebounce()
+    }
+        
+    private func setupDebounce() {
+        debouncedDesc = selectedLogBook.desc
+        
+        let publisher = $selectedLogBook.map { ($0.desc) }
+        publisher.debounce(for: .seconds(1), scheduler: RunLoop.main)
+            .sink(receiveValue: { [weak self] str in
+                self?.debouncedDesc = str
+            })
+            .store(in: &cancellables)
     }
     
     public func fetchLogBook() {
@@ -79,4 +95,29 @@ class LogBookViewModel: ObservableObject {
         
         todayLogBook = LogBook(id: logbook.id ?? UUID(), date: logbook.date ?? Date(), desc: logbook.desc ?? "")
     }
+    
+    //    Old method #1
+    //    private func setupDebounce() {
+    //        debouncedDesc = selectedLogBook.desc
+    //
+    //        let publisher = $selectedLogBook.map { ($0.desc) }
+    //        publisher.debounce(for: .seconds(2), scheduler: RunLoop.main)
+    //            .assign(to: &$debouncedDesc)
+    //    }
+        
+    //    Old method #2
+    //    private func setupDebounce() {
+    //        debouncedDesc = selectedLogBook.desc
+    //
+    //        let publisher = $selectedLogBook.map { ($0.desc) }
+    //        publisher.debounce(for: .seconds(2), scheduler: RunLoop.main)
+    //            .sink { (value) in
+    //                DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+    //                    DispatchQueue.main.async {
+    //                        self?.debouncedDesc = value
+    //                    }
+    //                }
+    //            }
+    //            .store(in: &cancellable)
+    //    }
 }

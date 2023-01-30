@@ -24,19 +24,21 @@ struct LogBookView: View {
             Section {
                 TextEditor(text: $logBookVM.selectedLogBook.desc)
                     .frame(height: 200)
-                    .onChange(of: logBookVM.selectedLogBook.desc) { _ in
+                    .onChange(of: logBookVM.debouncedDesc) { _ in
                         logBookVM.updateLogBook()
-                        print("LogBook Updated")
                     }
             } header: {
                 Text("Activity")
             }
         }
+        .onDisappear {
+            logBookVM.updateLogBook()
+        }
     }
 }
 
-struct LogBookView_Previews: PreviewProvider {
-    static var previews: some View {
-        LogBookView()
-    }
-}
+//struct LogBookView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LogBookView()
+//    }
+//}

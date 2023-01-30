@@ -29,10 +29,14 @@ struct ResourceDetailView: View {
         .onAppear {
             resourceVM.setSelectedResource(as: selectedResource)
         }
-        .onChange(of: resourceVM.selectedResource.title) { _ in
+        .onChange(of: resourceVM.debouncedTitle) { _ in
+            resourceVM.updateResource()
+            print("\(resourceVM.debouncedTitle)")
+        }
+        .onChange(of: resourceVM.debouncedDesc) { _ in
             resourceVM.updateResource()
         }
-        .onChange(of: resourceVM.selectedResource.desc) { _ in
+        .onDisappear {
             resourceVM.updateResource()
         }
     }

@@ -29,10 +29,13 @@ struct ReflectionDetailView: View {
         .onAppear {
             reflectVM.setSelectedReflection(as: selectedReflection)
         }
-        .onChange(of: reflectVM.selectedReflection.title) { _ in
+        .onChange(of: reflectVM.debouncedTitle) { _ in
             reflectVM.updateReflection()
         }
-        .onChange(of: reflectVM.selectedReflection.desc) { _ in
+        .onChange(of: reflectVM.debouncedDesc) { _ in
+            reflectVM.updateReflection()
+        }
+        .onDisappear {
             reflectVM.updateReflection()
         }
     }
